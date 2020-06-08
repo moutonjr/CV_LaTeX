@@ -6,4 +6,10 @@ Vous pourrez trouver dans ce dépôt mon CV au format PDF ainsi que les sources 
 
 
 # CV
-Il se trouve dans la partie "Releases" de GitHub.
+Il se trouve dans la partie "Releases" de GitHub:
+
+<object data="https://github.com/moutonjr/CV_LaTeX/releases/latest/download/CV_Montel.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/moutonjr/CV_LaTeX/releases/latest/download/CV_Montel.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/moutonjr/CV_LaTeX/releases/latest/download/CV_Montel.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
