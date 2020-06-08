@@ -1,18 +1,32 @@
 os: linux
 
 language: r
-sudo: required
+sudo: true
+latex: false
+pandoc: false
+warnings_are_errors: false
+
 apt_packages:
   - pdf2djvu
-
+  - libssl-dev
+  - libcurl4-openssl-dev
+  - libxml2-dev
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install pdf2djvu libssl-dev libcurl4-openssl-dev libxml2-dev
+install: echo "Nothing occurs at installation, only script"
 script:
-  - pdflatex -interaction=nonstopmode CV_Montel.tex
+  - Rscript .travis-helpers/install_texlive.R
+  - pdflatex -interaction=nonstopmode -halt-on-error -file-line-error CV_Montel.tex
   - pdf2djvu -d 1200 -o CV_Montel.djvu CV_Montel.pdf
 after_success:
+branches:
+  - master
+  - travising
 
 deploy:
   provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
+  token: $GITHUB_OAUTH_TOKEN
   file: 
     - "CV_Montel.pdf"
     - "CV_Montel.djvu"
