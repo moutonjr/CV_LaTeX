@@ -1,0 +1,321 @@
+%% CV LaTex
+% Author : Geoffrey Montel <geoffrey.montel@jserv.fr>
+% License : Creative Commons CC-BY-SA
+
+\documentclass[french,11pt]{report}
+\pagestyle{empty}
+
+\usepackage[a4paper,nohead,nofoot,%hmargin=2.5cm,
+left=.3cm,right=1.5cm,vmargin=.2cm]{geometry}								% Marges
+\usepackage{babel}															% Set pour français
+\usepackage[latin1]{inputenc}												% Encodage du code
+\usepackage[T1]{fontenc}													% Encodage de fonte
+\usepackage{palatino}														% Fonte
+\usepackage{eurosym} 														% Symbole euro
+\usepackage{fontawesome}
+\usepackage{graphicx} 														% Photo
+\usepackage{pifont}
+\usepackage{color} 															% Ton legerement gris
+\definecolor{fontcolor}{rgb}{.3,.3,.3} 
+\color{fontcolor}
+\usepackage{tabularx}														% Fancy tableaux
+\usepackage{calc}
+\usepackage[colorlinks=false,%,linkcolor=black,urlcolor=black,citecolor=black,
+pdftitle={CV Geoffrey MONTEL},
+pdfauthor={Geoffrey MONTEL},
+pdfsubject={Curriculum Vitae}]{hyperref}									% Liens hypertexte
+
+\newlength{\visitcard}
+\setlength{\visitcard}{.55\textwidth}
+\newlength{\ppvisitcard}
+\setlength{\ppvisitcard}{.95\textwidth}
+\addtolength{\ppvisitcard}{-\visitcard}
+\newlength{\margin}
+\setlength{\margin}{.15\textwidth}
+\newlength{\imgsize}
+\makeatletter
+%      \show\f@size
+\setlength{\imgsize}{\f@size pt}
+\makeatother
+
+\newcommand{\alinea}[1]{{\scriptsize \it \begin{itemize}\setlength\itemsep{.3em}\vspace{0em}#1\vspace{-1.2em}\end{itemize}}}
+%\newcommand{\alinea}[1]{{\scriptsize \it \begin{itemize}\setlength\itemsep{.5em}#1\vspace{-1.2em}\end{itemize}}}
+
+\newcommand{\tn}{\tabularnewline}
+\let\nem\em
+\renewcommand{\em}{\color{black}\nem}
+\let \hhref\href
+\renewcommand{\href}[2]{\hhref{#1}{\it#2}}
+
+\newcolumntype{M}[1]{>{\raggedright}m{#1}}
+\newcolumntype{N}[1]{>{\it\raggedleft}m{#1}}
+
+\newcolumntype{O}{>{\hsize=.125\textwidth \raggedleft} X}       
+\newcolumntype{P}{>{\hsize=.1\textwidth \raggedright} X}      
+\newenvironment{competences}[1]{\vspace{1em}
+
+\underline{\large#1 :}                                             
+                                                              
+        \raggedleft\tabularx{\textwidth}{ O P O P O P O P }\\       
+}                                                             
+{\endtabularx}                                                
+                                                              
+\newcommand{\level}[1]{ % In radio buttons, the level out of  
+\ifnum\pdfstrcmp{#1}{1}=-1 \ding{109}\else \ding{108}\fi      
+\ifnum\pdfstrcmp{#1}{2}=-1 \ding{109}\else \ding{108}\fi      
+\ifnum\pdfstrcmp{#1}{3}=-1 \ding{109}\else \ding{108}\fi      
+\ifnum\pdfstrcmp{#1}{4}=-1 \ding{109}\else \ding{108}\fi      
+\ifnum\pdfstrcmp{#1}{5}=-1 \ding{109}\else \ding{108}\fi      
+}
+
+\newenvironment{rubrique}[1]{ %
+	\tabularx{\textwidth}{N{\margin}|X}
+	\textbf{\large\textsc{#1}} & \\ \hrule \vspace{.2em}
+} %
+{\endtabularx \vspace{1em}}
+
+\newenvironment{myitemize}
+{ \begin{itemize}
+		\setlength{\itemsep}{-1em}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}     }
+	{ \end{itemize}                  } 
+
+% Adding phone number information
+\newcommand{\phoneNumber}{X XX XX XX XX}
+\include{personal}
+
+
+\newcommand{\makeheader}{ % EN-TETE
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                                 %
+		%             EN-TETE             %
+		%                                 %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{tabularx}{\textwidth}{M{\ppvisitcard}|m{.7\visitcard} m{.3\visitcard}}
+			\begin{flushright}
+				\Large \emph{Ingénieur sécurité SI \& Big Data}\\
+				\normalsize ISO 27001, expert GNU/Linux
+			\end{flushright}
+			&\parbox{.75\visitcard}{
+				{\bf \Huge Geoffrey Montel}\\
+				\faMapMarker \hspace{2pt} \href{https://goo.gl/maps/CHANGEME}{78, France}\\
+				\faMobile \hspace{2pt} +33(0) \phoneNumber \\
+				\faAt\hspace{2pt} \href{mailto:geoffrey.montel(AT)jserv.fr}{\tt geoffrey.montel(AT)jserv.fr}\\
+				\faLinkedinSquare \hspace{2pt}\href{https://www.linkedin.com/in/geoffreymontel/}{geoffreymontel}\hspace{2pt}\faGithub\hspace{2pt}\href{https://github.com/moutonjr}{moutonjr}
+			}
+			&\begin{flushright}
+				\includegraphics[height=7em]{Resource/photo.jpg} %photo à droite
+				\vspace{-1em}
+			\end{flushright}
+			\\
+			\multicolumn{2}{c}{}
+			\\[-1em]
+			\hline
+		\end{tabularx}
+	}
+
+\begin{document}
+{ % EN-TETE
+\makeheader
+\begin{center}\small
+La sécurité des systèmes d'information m'enthousiasme dans son rapport avec l'ingéniérie : la résolution de problématiques de technique et d'efficacité avec de la \emph{rigueur} et de l'\emph{originalité}. J'aime considérer ses enjeux comme un tout, de la gestion du SMSI fonctionnel aux tests d'intrusions techniques. \emph{Créatif} et \emph{déterminé}, j'impulse l'énergie du changement dans les organisations, en apportant une vision \emph{transversale}.
+\end{center}
+}
+	{ % EXPERIENCE
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                                 %
+		%            EXPERIENCE           %
+		%                                 %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\begin{rubrique}{Expérience}
+			Dep.~2018			& {\large {\href{https://www.formind.fr/fr/}{Formind}}} : \emph{Consultant Sécurité des SI}. \href{https://www.formind.fr/fr/}{\includegraphics[height=\imgsize]{Resource/FORMIND.png}}
+			\alinea{
+               			\item \href{https://www.suez.com}{\emph{Groupe SUEZ}}, assistance RSSI opérationnel groupe, expertise sécurité et support niveau 3 aux incidents de sécurité (création d'un \href{https://fr.wikipedia.org/wiki/Computer_emergency_response_team}{\emph{CSIRT}}) ;
+               			\item \href{https://www.sncf-reseau.fr/fr}{\emph{SNCF Réseau}}, \emph{coach} SSI auprès des équipes métiers, direction clients et services ;
+               			\item Compétences de sensibilitation, de création et implémentation de processus, coordination internationale, réponse à incident, suivi d'audits
+			}\tn
+			2016 -- 2018			& {\large {\href{http://www.thalesgroup.com}{Thales}}} : \emph{Ingénieur Cybersécurité mégadonnées (\textit{Big-Data})}. \href{http://www.thalesgroup.com}{\includegraphics[height=\imgsize]{Resource/THALES.jpeg}}
+			\alinea{
+				%\item Projet PunchPlatform : produit tout-en-un de traitement de flux redimensionnable et hautement résilient;
+				\item Analyse et mise en place des cas d'utilisations relatifs à la cybersécurité;
+				\item Mise en place de la normalisation, classification, gestion de l'évènement et indicateurs selon des normes existantes;
+				\item Formation aux bonnes pratiques de développement: AGILE, cycles de vie.
+			}\tn
+			2013 -- 2016			& {\large {\href{http://www.thalesgroup.com}{Thales}}} : \emph{Référent technique de la plateforme d'infogérance cybersécurité}.
+			\alinea{
+				\item Conception, dimensionnement d'architectures de sécurité, choix techniques et réalisation en temps restreint ;
+				\item Architecture \emph{à haute disponibilité, haute sécurité, à très haut débit redimensionnable} ;
+				\item Gestion d'une équipe de 5 personnes (orientée AGILE);
+				\item Déploiement de SOC à l'international sur le modèle conçu (Hollande, Hong Kong) ;
+				\item \href{www.ssi.gouv.fr/uploads/2014/12/PDIS_referentiel-d?exigences-v1.0.pdf}{Référentiel PDIS de l'ANSSI}, ISO 27001 ;
+				%\item \emph{Large connaissance du marché} technique, d'Unix, en intégration de systèmes, en \emph{structures architecturales, de virtualisation et de sécurité appliquée} ;
+				%\item Mise en place d'outil de déploiement automatique d'infrastructure chez Thales : \emph{1-infra-en-1-heure} ;
+				\item Représentant du SOC à l'eÃ©xtérieur : conférencier dans les Grandes \'Ecoles d'ingénieur, communication externe.
+			}\tn
+			Avr-sep 2013	& {\large {\href{http://www.thalesgroup.com}{Thales Services}}}, Élancourt : Projet de \emph{supervision de sécurité} au sein d'un SOC
+			\alinea{
+				\item Audit de sécurité de l'architecture en place ; 
+				\item Compétences en \emph{détection d'intrusions}, de \emph{corrélation} avec SIEM, de \emph{log management}.
+			}\tn
+			Jun-Sep 2012	& \large {\href{http://www.ibm.com/fr}{IBM}, La Gaude : Projet \href{http://www.ibm.com/extremeblue}{Extreme Blue}}  \href{http://www.ibm.com/fr}{\includegraphics[height=\imgsize]{Resource/IBM.png}}
+			\alinea{
+				\item Compétition mondiale sur des innovations technologiques sur le thème des \href{http://www-05.ibm.com/fr/ibmforum/smarter_cities.html}{villes intelligentes} ; \emph{Projets} : optimisation de livraisons avec GrandLyon ; parking intelligent avec \href{http://www.streetline.com}{Streetline}, déploiement d'\href{http://www-03.ibm.com/software/products/en/intelligent-operations-center}{IBM IOC} à Rio.
+			}\tn
+			2010~--~12	& Secrétaire et responsable technique de \href{http://www.larez.fr}{Supélec Rézo} (FAI des résidents de Supélec)   \href{http://www.larez.fr}{\includegraphics[height=\imgsize]{Resource/Rezo.jpg}}
+			\alinea{
+				\item Gestion de projets : Organisation de conférences \href{http://www.federez.net/journees/}{(Journées FedeRez)}, très bonnes connaissances en architecture réseau, 6 personnes à manager, projet de sécurisation d'une architecture.
+			}%\tn
+            % Oct 2011			& \href{http://www.gala.supelec.fr}{{\large Gala Supélec}} : Trésorier des préventes : 5600 personnes, 300 000\officialeuro \\
+			%Aou~2011				& {\large \href{http://www.voyages-sncf.fr}{SNCF}}, Tours : Gestion des retards des trains et accueil, information des voyageurs.   \href{http://www.voyages-sncf.fr}{\includegraphics[height=\imgsize]{Resource/SNCF.png}}\\
+		\end{rubrique}
+	}
+	{ % FORMATION
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                                 %
+		%           FORMATION             %
+		%                                 %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\begin{rubrique}{Formation}
+			2016	& Formé \href{http://www.iso.org/iso/fr/home/standards/management-standards/iso27001.htm}{\emph{ISO 27001:2013 Certification Lead Auditor par LSTI}; \includegraphics[height=\imgsize]{Resource/ISO.png}\includegraphics[height=\imgsize]{Resource/LSTI.jpg}}\tn
+			2010~--~13	&  \'{E}lève ingénieur à \href{http://www.supelec.fr}{\emph{SUP\'{E}LEC}}, option \emph{Sécurité des Systèmes d'Information}. \href{http://www.supelec.fr}{\includegraphics[height=\imgsize]{Resource/CentraleSupelec.png}}
+			\alinea{
+				\item Aujourd'hui CentraleSupélec, Gif-sur-Yvette : majeure à dominante de cryptographie, détection d'intrusions, management de SI.
+			}\tn
+			2008~--~10 	& Classes préparatoires PC* au \href{http://www.lamartinieremonplaisir.org}{Lycée La Martinière Monplaisir},  Lyon 7.
+		\end{rubrique}
+	}
+	{ % COMPETENCES
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                                 %
+		%           COMPETENCES           %
+		%                                 %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\begin{rubrique}{Compétences}
+
+			Informatique 			& \vspace{-0.7em} \begin{itemize}
+				\item \emph{Maitrise} GNU/Linux, théorie des réseaux , virtualisation; avec spécialisation mégadonnées pour la sécurit:;
+				\item Compétences en outils de sécurité : CERTs, SIEMs, sondes\dots
+			\end{itemize} \tn
+
+			Langues 	&	\vspace{-0.7em}	\begin{itemize}
+			\item {\large Anglais : {C1}} -- \href{http://www.ielts.org/}{IELTS 7.5/9} (28 Avril 2012) : Good user ;
+			\item {\large Allemand : {B2}} -- {\scriptsize \it S\'ejour de 6 mois cumul\'e en Allemagne et Autriche} ;
+			\item {\large Espagnol : {A2}} (Séjour Espagne et Costa Rica).
+			\vspace{-1.2em}
+			\end{itemize} \tn
+		\end{rubrique}
+	}
+	{ % DIVERS
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                                 %
+		%             DIVERS              %
+		%                                 %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{tabularx}{\textwidth}{N{.3\textwidth} X}
+			{\textsc{\bf Intérêts et loisirs}} & \\ \vspace{-.2em}\hrule
+		\end{tabularx}
+		\begin{myitemize}
+		\vspace{-1em}
+			\item Littérature et langue française (8\ieme\ sur 260 à la \href{http://dictee.ece.fr/}{dictée ECE}),\\
+			\item Contributeur GNU sur \href{https://github.com/}{GitHub} et \href{http://fr.wikipedia.org}{Wikipédia} (traduction, relecture), \includegraphics[height=\imgsize]{Resource/Wikipedia.jpg}\\
+			\item Menuiserie et recyclage de matériaux\\
+			\item Domotique et \href{https://www.raspberrypi.org/}{Raspberry Pi hacking},\\
+			\item Techniques de communication et de PNL.
+		\end{myitemize}
+	}
+\newpage
+\makeheader
+	{ % COMPETENCES
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%                                 %
+		%             COMPETENCES         %
+		%                                 %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{center}
+		\textsc{Aptitudes techniques}
+		
+		\rule{10cm}{.1mm}
+		\end{center}
+\begin{competences}{Mégadonnées et traitement distribué}
+		\href{https://storm.apache.org}{Storm} & \level{5} &
+		\href{https://kafka.apache.org}{Kafka} & \level{5} &
+		\href{https://spark.apache.org}{Spark} & \level{2} &
+		\href{https://metron.apache.org}{Metron} & \level{2} \tn
+
+		\href{https://www.elastic.co/fr/products/elasticsearch}{Elasticsearch} & \level{5} &
+		\href{https://www.elastic.co/fr/products/kibana}{Kibana} & \level{5} &
+		\href{https://www.elastic.co/fr/products/logstash}{Logstash} & \level{3} &
+		\href{https://zookeeper.apache.org}{Zookeeper} & \level{4} \tn
+
+		\href{https://spot.apache.org}{Spot} & \level{2} &
+		\href{https://hadoop.apache.org}{Hadoop} & \level{2} &
+		\href{https://www.ceph.com}{CEPH} & \level{3} &
+		\href{https://www.picviz.com}{Picviz} & \level{2} \tn
+\end{competences}
+\begin{competences}{Applicatifs de la sécurité}
+		\href{https://www.blackstratus.com/siem-storm}{BlackStratus} & \level{5} &
+		\href{https://www.ibm.com/software/products/fr/qradar}{IBM QRadar} & \level{2} &
+		\href{https://www.paterva.com/}{Maltego CE} & \level{2} &
+		\href{https://www.qualys.com}{Qualys} & \level{2} \tn
+		\href{https://www.checkmarx.com}{Checkmarx} & \level{2} &
+		\href{https://www.thehive-project.com}{The Hive} & \level{2} &
+		\href{https://www.metasploit.com/}{Metasploit} & \level{2}
+\end{competences}
+\begin{competences}{Infrastructure et Cloud}
+		\href{https://www.linux-kvm.org/}{Linux KVM} & \level{5} &
+		\href{https://www.docker.com/}{Docker+Mesos} & \level{3} &
+		\href{https://linuxcontainers.org/fr/}{LXC} & \level{5} &
+		\href{https://www.openstack.org/}{Openstack} & \level{3} \tn
+		
+		\href{https://www.ansible.com/}{Ansible} & \level{5} &
+		\href{https://www.chef.io/chef/}{Chef} & \level{2} &
+		\href{https://puppet.com/fr}{Puppet} & \level{4} &
+		\href{https://saltstack.com/}{Saltstack} & \level{1} \tn
+		
+		\href{https://linuxfr.org/}{Linux} & \level{5} &
+		\href{https://www.microsoft.com/fr-fr/windows/}{Windows} & \level{3} &
+		\href{https://www.freebsd.org/fr}{BSD} & \level{3} &
+		\href{https://saltstack.com/}{Saltstack} & \level{2} \tn
+		
+		\href{https://wiki.debian.org/fr/Bind9}{BIND9} & \level{5} &
+		\href{www.openldap.org/}{OpenLDAP} & \level{5} &
+		\href{www.postfix.org/}{Postfix} & \level{5} &
+		\href{www.netfilter.org/}{NetFilter}  & \level{5} \tn
+		
+		\href{https://httpd.apache.org}{HTTPD} & \level{5} &
+		\href{www.haproxy.org}{HAProxy} & \level{5} &
+		\href{https://www.nagios.org/}{Nagios} & \level{5} &
+		\href{www.clusterlabs.org}{Pacemaker}  & \level{5} \tn
+\end{competences}
+\begin{competences}{Réseaux et équipements}
+		\href{http://www.juniper.com}{Juniper} & \level{5} &
+		\href{https://www.forcepoint.com/fr}{ForcePoint} & \level{4} &
+		\href{http://www.cisco.com}{Cisco (Switch)} & \level{3} &
+		\href{https://www.stormshield.eu/fr/}{StormShield} & \level{4} \tn
+
+		\href{http://www.snort.org}{SourceFire} & \level{3} &
+		\href{www.denyall.com/}{DenyAll} & \level{2} &
+		\href{www.infoblox.com/}{Infoblox} & \level{2} 
+\end{competences}
+\begin{competences}{Développement et script}
+		\href{http://doc.ubuntu-fr.org/bash}{Bash} & \level{5} &
+		\href{https://www.python.org/}{Python} & \level{2} &
+		\href{https://www.java.com/fr}{Java} & \level{5} &
+		\href{http://www.latex-project.org}{\LaTeX} & \level{5} \tn
+
+		\href{https://docs.microsoft.com/en-us/powershell/scripting/overview}{Python} & \level{2}
+\end{competences}
+
+\vfill
+{ \small NB : \ding{108} installé; 
+\ding{108}\ding{108} testé; 
+\ding{108}\ding{108}\ding{108} utilisé en production;
+\ding{108}\ding{108}\ding{108}\ding{108} utilisé \& exploration des fonctionnalités
+\ding{108}\ding{108}\ding{108}\ding{108}\ding{108} maitrise
+}
+	}
+\end{document}

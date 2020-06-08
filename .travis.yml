@@ -1,0 +1,34 @@
+os: linux
+
+# we use the R VM because it contains LaTeX and pandoc
+language: r
+sudo: required
+apt_packages:
+  - pdf2djvu
+
+script:
+# in the next step we use pdflatex to convert .tex to .pdf
+# of course we could use pandoc for this also, but pdflatex generates nicer PDFs
+  - pdflatex -interaction=nonstopmode CV_Montel.tex
+
+# now we convert the pdf file to a much smaller djvu document  
+  - pdf2djvu -d 1200 -o CV_Montel.djvu CV_Montel.pdf
+after_success:
+
+deploy:
+# provider releases means GitHub Releases
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+
+# Travis CI public key encrypted GitHub oauth key for pushing to GitHub Releases
+    secure: TODO
+
+# the list of files to upload
+  file: 
+    - "CV_Montel.pdf"
+    - "CV_Montel.djvu"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: moutonjr/CV_LaTeX
+
