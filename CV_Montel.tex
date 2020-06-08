@@ -46,7 +46,7 @@ left=.3cm,right=1.5cm,vmargin=.2cm]{geometry}			% Marges
 
 
 %%% Begin : alias
-\newcommand{\alinea}[1]{{\scriptsize \it \begin{itemize}\setlength\itemsep{.3em}\vspace{0em}#1\vspace{-1.2em}\end{itemize}}}
+\newcommand{\alinea}[1]{{\scriptsize \it \begin{itemize}\setlength\itemsep{.2em}\vspace{0em}#1\vspace{-1.6em}\end{itemize}}}
 
 \newcommand{\tn}{\tabularnewline}
 \let\nem\em
@@ -79,7 +79,7 @@ left=.3cm,right=1.5cm,vmargin=.2cm]{geometry}			% Marges
 
 \newenvironment{rubrique}[1]{ %
 	\tabularx{\textwidth}{N{\margin}|X}
-	\textbf{\large\textsc{#1}} & \\ \hrule \vspace{.2em}
+	\textbf{\large\textsc{#1}} & \\ \hrule \vspace{.4em}
 } %
 {\endtabularx \vspace{1em}}
 
@@ -91,7 +91,10 @@ left=.3cm,right=1.5cm,vmargin=.2cm]{geometry}			% Marges
 	{ \end{itemize}                  } 
 
 \newcommand{\phoneNumber}{X XX XX XX XX}
-% Adding phone number information
+\newcommand{\emailAddress}{geoffrey(dot)montel(at)jserv(.)fr}
+\newcommand{\gMapURL}{https://goo.gl/maps/NrfWbJdup4aDV8sw5}
+\newcommand{\address}{Ile de France}
+% Adding private information
 \include{personal}
 
 \newcommand{\makeheader}{ % EN-TETE
@@ -102,14 +105,14 @@ left=.3cm,right=1.5cm,vmargin=.2cm]{geometry}			% Marges
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		\begin{tabularx}{\textwidth}{M{\ppvisitcard}|m{.7\visitcard} m{.3\visitcard}}
 			\begin{flushright}
-				\Large \emph{Ingénieur sécurité SI \& Big Data}\\
-				\normalsize ISO 27001, expert GNU/Linux
+				\Large {Expert SSI, réponse à incidents}\\
+				\normalsize Manager, expert SOC/CSIRT, GNU/Linux, ISO 27001
 			\end{flushright}
 			&\parbox{.75\visitcard}{
 				{\bf \Huge Geoffrey Montel}\\
-				\faMapMarker \hspace{2pt} \href{https://goo.gl/maps/CHANGEME}{78, France}\\
+				\faMapMarker \hspace{2pt} \href{\gMapURL}{\address}\\
 				\faMobile \hspace{2pt} +33(0) \phoneNumber \\
-				\faAt\hspace{2pt} \href{mailto:geoffrey.montel(AT)jserv.fr}{\tt geoffrey.montel(AT)jserv.fr}\\
+				\faAt\hspace{2pt} \href{mailto:\emailAddress}{\tt \emailAddress}\\
 				\faLinkedinSquare \hspace{2pt}\href{https://www.linkedin.com/in/geoffreymontel/}{geoffreymontel}\hspace{2pt}\faGithub\hspace{2pt}\href{https://github.com/moutonjr}{moutonjr}
 			}
 			&\begin{flushright}
@@ -127,7 +130,7 @@ left=.3cm,right=1.5cm,vmargin=.2cm]{geometry}			% Marges
 { % EN-TETE
 \makeheader
 \begin{center}\small
-La sécurité des systèmes d'information m'enthousiasme dans son rapport avec l'ingéniérie : la résolution de problématiques de technique et d'efficacité avec de la \emph{rigueur} et de l'\emph{originalité}. J'aime considérer ses enjeux comme un tout, de la gestion du SMSI fonctionnel aux tests d'intrusions techniques. \emph{Créatif} et \emph{déterminé}, j'impulse l'énergie du changement dans les organisations, en apportant une vision \emph{transversale}.
+La SSI m'enthousiasme dans son rapport avec l'ingénierie : la résolution de problématiques techniques et d'efficacité avec de la \emph{rigueur} et de l'\emph{originalité}. Pour moi, le succès de la sécurité vient de l'approche \emph{transversale} : des vulnérabilités à la gestion du risque. \emph{Créatif} et \emph{déterminé}, j'impulse l'énergie du changement dans les organisations.
 \end{center}
 }
 	{ % EXPERIENCE
@@ -138,39 +141,41 @@ La sécurité des systèmes d'information m'enthousiasme dans son rapport avec l'in
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		
 		\begin{rubrique}{Expérience}
-			Dep.~2018			& {\large {\href{https://www.formind.fr/fr/}{Formind}}} : \emph{Consultant Sécurité des SI}. \href{https://www.formind.fr/fr/}{\includegraphics[height=\imgsize]{Resource/FORMIND.png}}
+			Dep.~2018			& {\large {\href{https://www.formind.fr/fr/}{Formind}}} : \emph{Consultant Manager}. \href{https://www.formind.fr/fr/}{\includegraphics[height=\imgsize]{Resource/FORMIND.png}}
 			\alinea{
-               			\item \href{https://www.suez.com}{\emph{Groupe SUEZ}}, assistance RSSI opérationnel groupe, expertise sécurité et support niveau 3 aux incidents de sécurité (création d'un \href{https://fr.wikipedia.org/wiki/Computer_emergency_response_team}{\emph{CSIRT}}) ;
-               			\item \href{https://www.sncf-reseau.fr/fr}{\emph{SNCF Réseau}}, \emph{coach} SSI auprès des équipes métiers, direction clients et services ;
-               			\item Compétences de sensibilitation, de création et implémentation de processus, coordination internationale, réponse à incident, suivi d'audits
+               			\item \href{https://www.suez.com}{\emph{Groupe SUEZ}}, assistance RSSI opérationnel groupe, expertise sécurité et support niveau 3 aux incidents de sécurité (création d'un \href{https://fr.wikipedia.org/wiki/Computer_emergency_response_team}{\emph{CSIRT}}), 2 ans ;
+               			\item \href{https://www.sncf-reseau.fr/fr}{\emph{SNCF Réseau}}, \emph{coach} SSI auprès des équipes métiers, direction clients et services, 1 an ;
+               			\item Manager d'une équipe de 10 consultants ;
+               			\item Porteur d'offre "Réponse à incidents" (R.A.O., avant-vente)
 			}\tn
 			2016 -- 2018			& {\large {\href{http://www.thalesgroup.com}{Thales}}} : \emph{Ingénieur Cybersécurité mégadonnées (\textit{Big-Data})}. \href{http://www.thalesgroup.com}{\includegraphics[height=\imgsize]{Resource/THALES.jpeg}}
 			\alinea{
 				%\item Projet PunchPlatform : produit tout-en-un de traitement de flux redimensionnable et hautement résilient;
 				\item Analyse et mise en place des cas d'utilisations relatifs à la cybersécurité;
 				\item Mise en place de la normalisation, classification, gestion de l'évènement et indicateurs selon des normes existantes;
-				\item Formation aux bonnes pratiques de développement: AGILE, cycles de vie.
+				\item Formation aux bonnes pratiques de développement: AGILE, DevOps.
 			}\tn
-			2013 -- 2016			& {\large {\href{http://www.thalesgroup.com}{Thales}}} : \emph{Référent technique de la plateforme d'infogérance cybersécurité}.
+			2013 -- 2016			& {\large {\href{http://www.thalesgroup.com}{Thales}}} : \emph{Responsable des infrastructures SOC}.
 			\alinea{
 				\item Conception, dimensionnement d'architectures de sécurité, choix techniques et réalisation en temps restreint ;
 				\item Architecture \emph{à haute disponibilité, haute sécurité, à très haut débit redimensionnable} ;
 				\item Gestion d'une équipe de 5 personnes (orientée AGILE);
 				\item Déploiement de SOC à l'international sur le modèle conçu (Hollande, Hong Kong) ;
 				\item \href{www.ssi.gouv.fr/uploads/2014/12/PDIS_referentiel-d?exigences-v1.0.pdf}{Référentiel PDIS de l'ANSSI}, ISO 27001 ;
-				\item Représentant du SOC à l'eÃ©xtérieur : conférencier dans les Grandes \'Ecoles d'ingénieur, communication externe.
+				\item Représentant du SOC à l'extérieur : conférencier dans les Grandes \'Ecoles d'ingénieur, communication externe.
 			}\tn
 			Avr-sep 2013	& {\large {\href{http://www.thalesgroup.com}{Thales Services}}}, Élancourt : Projet de \emph{supervision de sécurité} au sein d'un SOC
 			\alinea{
-				\item Audit de sécurité de l'architecture en place ; 
-				\item Compétences en \emph{détection d'intrusions}, de \emph{corrélation} avec SIEM, de \emph{log management}.
+				\item Audit d'architecture et des systèmes en place ; 
+				\item Compétences en \emph{détection d'intrusions}, de \emph{corrélation} avec SIEM, de \emph{journalisation}.
 			}\tn
 			Jun-Sep 2012	& \large {\href{http://www.ibm.com/fr}{IBM}, La Gaude : Projet \href{http://www.ibm.com/extremeblue}{Extreme Blue}}  \href{http://www.ibm.com/fr}{\includegraphics[height=\imgsize]{Resource/IBM.png}}
 			\alinea{
-				\item Compétition mondiale sur des innovations technologiques sur le thème des \href{http://www-05.ibm.com/fr/ibmforum/smarter_cities.html}{villes intelligentes} ; \emph{Projets} : optimisation de livraisons avec GrandLyon ; parking intelligent avec \href{http://www.streetline.com}{Streetline}, déploiement d'\href{http://www-03.ibm.com/software/products/en/intelligent-operations-center}{IBM IOC} à Rio.
+				\item Compétition mondiale sur des innovations technologiques sur le thème des \href{http://www-05.ibm.com/fr/ibmforum/smarter_cities.html}{villes intelligentes} ; \emph{Projets} : optimisation de livraisons avec GrandLyon ; parking intelligent avec \href{http://www.streetline.com}{Streetline}, déploiement d'\href{http://www-03.ibm.com/software/products/en/intelligent-operations-center}{IBM IOC} à Rio de Janeiro.
 			}\tn
-			2010~--~12	& Secrétaire et responsable technique de \href{http://www.larez.fr}{Supélec Rézo} (FAI des résidents de Supélec)   \href{http://www.larez.fr}{\includegraphics[height=\imgsize]{Resource/Rezo.jpg}}
+			2010~--~12	& Secrétaire et responsable technique de \href{http://www.larez.fr}{Supélec Rézo}   \href{http://www.larez.fr}{\includegraphics[height=\imgsize]{Resource/Rezo.jpg}}
 			\alinea{
+				\item (ex-ViaRezo, FAI des résidents de CentraleSupélec)
 				\item Gestion de projets : Organisation de conférences \href{http://www.federez.net/journees/}{(Journées FedeRez)}, très bonnes connaissances en architecture réseau, 6 personnes à manager, projet de sécurisation d'une architecture.
 			}
 		\end{rubrique}
@@ -200,15 +205,18 @@ La sécurité des systèmes d'information m'enthousiasme dans son rapport avec l'in
 		
 		\begin{rubrique}{Compétences}
 
-			Informatique 			& \vspace{-0.7em} \begin{itemize}
-				\item \emph{Maitrise} GNU/Linux, théorie des réseaux , virtualisation; avec spécialisation mégadonnées pour la sécurit:;
-				\item Compétences en outils de sécurité : CERTs, SIEMs, sondes\dots
+			Savoir-faire 			& \vspace{-0.7em} \begin{itemize}
+				\item \emph{Maitrise} GNU/Linux et réseaux, virtualisation; mégadonnées pour la cybersécurité ;
+				\item Fonctionnel: audits, implémentation de CERT, SOC, SMSI
 			\end{itemize} \tn
-
+			Savoir-être 			& \vspace{-0.7em} \begin{itemize}
+			\item \textit{Leadership} technique, savoir convaincre en contexte international, pédagogie ;
+			\item Développement et promotion de projets et d'offres, savoir présenter.
+		\end{itemize} \tn
 			Langues 	&	\vspace{-0.7em}	\begin{itemize}
 			\item {\large Anglais : {C1}} -- \href{http://www.ielts.org/}{IELTS 7.5/9} (28 Avril 2012) : Good user ;
 			\item {\large Allemand : {B2}} -- {\scriptsize \it S\'ejour de 6 mois cumul\'e en Allemagne et Autriche} ;
-			\item {\large Espagnol : {A2}} (Séjour Espagne et Costa Rica).
+			\item {\large Espagnol : {A2}} (autodidacte).
 			\vspace{-1.2em}
 			\end{itemize} \tn
 		\end{rubrique}
@@ -224,11 +232,10 @@ La sécurité des systèmes d'information m'enthousiasme dans son rapport avec l'in
 		\end{tabularx}
 		\begin{myitemize}
 		\vspace{-1em}
+			\item Heureux père d'Arthur (2019),\\
 			\item Litt\'erature et langue fran\c{c}aise (8\textsuperscript{e} sur 260 \`a la \href{http://dictee.ece.fr/}{dict\'e ECE}),\\
-			\item Contributeur GNU sur \href{https://github.com/}{GitHub} et \href{http://fr.wikipedia.org}{Wikipédia} (traduction, relecture), \includegraphics[height=\imgsize]{Resource/Wikipedia.jpg}\\
-			\item Menuiserie et recyclage de matériaux\\
-			\item Domotique et \href{https://www.raspberrypi.org/}{Raspberry Pi hacking},\\
-			\item Techniques de communication et de PNL.
+			\item Techniques de communication et de PNL,\\
+			\item Contributeur sur \href{https://github.com/}{GitHub} dont \href{https://yunohost.org/}{YunoHost}, et \href{http://fr.wikipedia.org}{Wikipédia} (traduction, relecture). \includegraphics[height=\imgsize]{Resource/Wikipedia.jpg}
 		\end{myitemize}
 	}
 \newpage
